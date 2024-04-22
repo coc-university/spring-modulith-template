@@ -1,17 +1,12 @@
-# Getting Started
+# Spring Modulith Template
 
-### Reference Documentation
+### In general
 
-- https://docs.spring.io/spring-modulith/reference/fundamentals.html
-
-### Other Examples
-
-- https://github.com/spring-projects/spring-modulith/tree/main/spring-modulith-examples/spring-modulith-example-full
-- https://github.com/predic8/spring-modulith-demo
-
-### Verify Module Dependencies
-
-- run testcase (ArchUnit under the hood)
+- we want to organize the backend with modules and keep them separate
+- package dependencies will be checked automatically via testcases
+- https://docs.spring.io/spring-modulith/reference/index.html
+- https://github.com/spring-projects/spring-modulith
+- https://www.baeldung.com/spring-modulith
 
 ### This Demo
 
@@ -30,3 +25,17 @@
   - e.g. OrderManagement can call OrderStatistics
 - but try to mark many classes with package-private (no modifier) to hide them for others
   - e.g. OrderHandler can only be called from OrderManagement, not visible for any other class in the project
+- https://docs.spring.io/spring-modulith/reference/fundamentals.html
+
+### Testing
+
+- ModularityTests (ArchUnit under the hood) to check dependencies and generate docs
+  - https://docs.spring.io/spring-modulith/reference/verification.html
+  - https://docs.spring.io/spring-modulith/reference/documentation.html
+- Order/InventoryTest loads only beans of the module via @ApplicationModuleTest
+  - https://docs.spring.io/spring-modulith/reference/testing.html
+
+### Other Examples
+
+- https://github.com/spring-projects/spring-modulith/tree/main/spring-modulith-examples/spring-modulith-example-full
+- https://github.com/predic8/spring-modulith-demo
